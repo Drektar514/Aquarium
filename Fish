@@ -1,0 +1,38 @@
+using System;
+
+namespace Aquarium
+{
+    class Fish
+    {
+        private string _name;
+        private int _age;
+        private bool _isDie;
+        private int _maxAge = 15;
+
+        public bool IsDie => _isDie = _age >= _maxAge;
+
+        public Fish(string name, int age)
+        {
+            _name = name;
+            _age = age;
+        }
+
+        public void AddAge()
+        {
+            _age++;
+        }
+
+        public void ShowInfo()
+        {
+            if (_isDie)
+            {
+                Console.WriteLine($"Ваша рыбка - {_name} мертва...");
+            }
+
+            else
+            {
+                Console.WriteLine($"Рыбка - {_name}, её возраст - {_age}");
+            }
+        }
+    }
+}
